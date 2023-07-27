@@ -1,0 +1,18 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <h1 class="text-secondary text-center">paying for {{ produc.name }}</h1>
+        <form class="product-form" method="post" action="">
+            <p>{{ success }}</p>
+            {% csrf_token %}
+            <input value="{{  produc.price  }}" required readonly class="form-control" placeholder="Enter name"  name="p-price" type="text"><br>
+            <input required class="form-control" placeholder="phone number" name="c-phone" type="text"><br>
+            <input required class="btn btn-info" value="pay" type="submit">
+        </form>
+        <p>{{ prod_name }}</p>
+        <p>{{ prod_quantity }}</p>
+        <p>{{ prod_size }}</p>
+        <p>{{ prod_price }}</p>
+    </div>
+{% endblock %}
